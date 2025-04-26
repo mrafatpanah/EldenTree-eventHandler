@@ -1,20 +1,45 @@
-# Elden Tree Event Handler
+# Elden Tree - C++ Event Handler
 
-A high-performance event handling system implemented in C++. The Elden Tree event handler is designed to efficiently process and route events between different system components with minimal latency.
+A fast, thread-safe C++14 library for handling events concurrently and fairly. Uses a thread pool and per-destination queues.
 
-## Features
+## Requirements
 
-- High-performance event dispatching
-- Type-safe event handling
-- Priority-based event processing
-- Thread-safe implementation
-- Flexible subscription model
-- Low memory overhead
+* C++14 Compiler (GCC, Clang, MSVC)
+* CMake (3.10+)
+* Git
 
-## Building
+## Build & Run Example
 
-```bash
-mkdir build && cd build
-cmake ..
-make
+1.  **Clone:**
+    ```bash
+    git clone 
+    cd EldenTree
+    ```
+2.  **Build:**
+    ```bash
+    mkdir build && cd build
+    cmake ..
+    make
+    ```
+
+## Quick Usage
+
+```cpp
+#include "EldenTree.hpp"
+#include <memory>
+
+// Implement elden_tree::god::IEventProcessor
+class MyProcessor : public elden_tree::god::IEventProcessor { /* ... */ };
+
+int main() {
+    elden_tree::EldenTree tree(4);
+    auto processor = std::make_shared<MyProcessor>(101);
+    tree.registerProcessor(processor);
+
+    elden_tree::god::GodEvent event;
+    event.targetLandId = 101;
+    // ... set other event fields ...
+    tree.postEvent(event);
+    return 0;
+}
 ```
