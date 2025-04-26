@@ -38,6 +38,33 @@ The project uses GoogleTest for unit testing.
 
 Tests will automatically download and build GoogleTest during the CMake process.
 
+## Running Benchmarks
+The project uses Google Benchmark for performance testing.
+
+1. **Configure CMake with benchmarks enabled:**
+(Run this in your build directory after cloning)
+
+```bash
+# Make sure you are in the build directory
+cmake .. -DBUILD_BENCHMARKS=ON
+```
+
+2. **Build the project (including benchmarks):**
+
+```bash
+make
+# Or: cmake --build .
+```
+
+3. **Run the benchmark executable:**
+(The executable name might be slightly different based on your CMakeLists.txt)
+
+```bash
+./elden_tree_benchmark
+```
+
+Benchmarks will automatically download and build Google Benchmark during the CMake process if BUILD_BENCHMARKS is ON.
+
 ## Quick Usage
 
 ```cpp
