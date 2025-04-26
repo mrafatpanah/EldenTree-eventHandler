@@ -10,22 +10,36 @@ A fast, thread-safe C++14 library for handling events concurrently and fairly. U
 
 ## Build & Run Example
 
-1.  **Clone:**
+1.  **Clone the repository:**
     ```bash
-    git clone 
-    cd EldenTree
+    git clone https://github.com/mrafatpanah/EldenTree-eventHandler.git
+    cd EldenTree-eventHandler
     ```
-2.  **Build:**
+2.  **Build the project:**
     ```bash
     mkdir build && cd build
     cmake ..
     make
     ```
 
+3.  **Run the example:**
+    ```bash
+    ./main
+    ```
+
+## Running Tests
+
+The project uses GoogleTest for unit testing.
+
+**After building:**
+    ```bash
+    ./EldenTreeTest
+    ```
+
 ## Quick Usage
 
 ```cpp
-#include "EldenTree.hpp"
+#include "elden_tree/EldenTree.hpp"
 #include <memory>
 
 // Implement elden_tree::god::IEventProcessor
