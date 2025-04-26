@@ -31,10 +31,12 @@ A fast, thread-safe C++14 library for handling events concurrently and fairly. U
 
 The project uses GoogleTest for unit testing.
 
-**After building:**
-    ```bash
-    ./EldenTreeTest
-    ```
+1. **After building:**
+```bash
+./EldenTreeTest
+```
+
+Tests will automatically download and build GoogleTest during the CMake process.
 
 ## Quick Usage
 
